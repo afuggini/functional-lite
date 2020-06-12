@@ -1,6 +1,6 @@
 {
   "name": "@afuggini/functional-lite",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Micro functional library",
   "main": "functional-lite.js",
   "scripts": {

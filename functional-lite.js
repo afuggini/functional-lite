@@ -22,16 +22,16 @@
   function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
   var map = function map(f) {
-    return function (step) {
-      return function (a, c) {
+    return function step(step) {
+      return function mapReduce(a, c) {
         return step(a, f(c));
       };
     };
   };
 
   var filter = function filter(predicate) {
-    return function (step) {
-      return function (a, c) {
+    return function step(step) {
+      return function filterReduce(a, c) {
         return predicate(c) ? step(a, c) : a;
       };
     };
@@ -85,6 +85,7 @@
     transduce: transduce,
     concatArray: concatArray,
     toArray: toArray,
-    log: log
+    log: log,
+    logStep: log
   };
 }));
